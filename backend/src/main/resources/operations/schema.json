@@ -1,0 +1,88 @@
+{
+  "slug": "audit",
+  "title": "审计抽样覆盖与例外复测缺口",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "population",
+      "label": "总体数量",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    },
+    {
+      "key": "samplePct",
+      "label": "要求抽样%",
+      "type": "NUMBER",
+      "scale": 4,
+      "min": "0",
+      "max": "100"
+    },
+    {
+      "key": "sampled",
+      "label": "已抽样数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    },
+    {
+      "key": "exceptions",
+      "label": "例外数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    },
+    {
+      "key": "retestedPass",
+      "label": "例外复测通过数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    }
+  ],
+  "columns": [
+    {
+      "key": "requiredSamples",
+      "label": "要求样本数"
+    },
+    {
+      "key": "samplingGap",
+      "label": "抽样缺口"
+    },
+    {
+      "key": "unresolvedExceptions",
+      "label": "未通过复测例外"
+    },
+    {
+      "key": "exceptionPct",
+      "label": "样本例外率%"
+    }
+  ],
+  "description": "按输入抽样比例向上取整计算样本要求，并核对例外数量和已通过复测数量；不自动关闭审计发现。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-23",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "population": "101",
+        "samplePct": "10",
+        "sampled": "11",
+        "exceptions": "2",
+        "retestedPass": "2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "requiredSamples": "#11",
+      "unresolvedExceptions": "#0"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "sampled": "10"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "samplingGap": "#1"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "retestedPass": "1"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "retestedPass": "3"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "population": "0",
+      "sampled": "0",
+      "exceptions": "0",
+      "retestedPass": "0"
+    },
+    "expected": {
+      "decision": "REVIEW"
+    },
+    "error": false
+  }
+]
